@@ -107,7 +107,7 @@ img {
 .content .left-side {
   width: 300px;
   background-color: var(--con-color);
-  min-height: 80vh;
+  min-height: 85vh;
   border-radius: var(--bor-rad);
   display: flex;
   justify-content: space-between;
@@ -121,6 +121,7 @@ img {
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+  margin-bottom: 30px;
 }
 .content .left-side .my-img {
   width: 190px;
@@ -182,7 +183,7 @@ img {
 .content .left-side .nav .nav-link i {
   color: var(--var-color);
   display: block;
-  font-size: 23px;
+  font-size: 22px;
   transition: 0.3s;
 }
 .content .left-side .nav .nav-link .item-name {
