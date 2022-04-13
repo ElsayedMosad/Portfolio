@@ -1,5 +1,3 @@
-
-
 // Genral functions
 function removeClass(ArrayOfElements, classTargetToRemove) {
   ArrayOfElements.forEach((element) => {
@@ -19,13 +17,20 @@ navLinks.forEach((e, index) => {
       removeClass(navLinks, "active-link");
       e.classList.add("active-link");
       if (index === 0 || index === navLinks.length - 1) {
-        if (leftSide.classList.contains('play-left')) {
-          leftSide.classList.remove('play-left')
+        if (leftSide.classList.contains("play-left")) {
+          leftSide.classList.remove("play-left");
         }
-      }
-      else if (!leftSide.classList.contains('play-left')) {
-        leftSide.classList.add('play-left')
+      } else if (!leftSide.classList.contains("play-left")) {
+        leftSide.classList.add("play-left");
       }
     }
   });
+});
+
+// Toggle side
+const toggleSide = document.querySelector(".toggle-side");
+const containrContent = document.querySelector(".content .container");
+toggleSide.addEventListener("click", (e) => {
+  toggleSide.classList.toggle("toggle-open");
+  containrContent.classList.toggle("more");
 });
