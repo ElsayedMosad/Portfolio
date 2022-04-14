@@ -66,3 +66,32 @@ toggleSide.addEventListener("click", (e) => {
   toggleSide.classList.toggle("toggle-open");
   containrContent.classList.toggle("more-list");
 });
+
+
+// Date at Right side
+
+const d = new Date();
+
+// console.log(d)
+
+const dateDay = document.getElementById('date-day');
+dateDay.innerText = d.getDate()
+
+const dateMonth = document.getElementById('date-month');
+dateMonth.innerText = `${d} + `.slice(4, 7)
+
+const dateYear = document.getElementById('date-year');
+dateYear.innerText = d.getFullYear()
+
+
+
+// console.log(d.getFullYear());//Get the year as a four digit number (yyyy)
+// console.log(d.getMonth());//Get the month as a number (0-11)
+// console.log(d.getDate());//Get the day as a number (1-31)
+// console.log(d.getHours());//Get the hour (0-23)
+// console.log(d.getMinutes());//Get the minute (0-59)
+// console.log(d.getSeconds());//Get the second (0-59)
+// console.log(d.getMilliseconds());//Get the millisecond (0-999)
+// console.log(d.getTime());//Get the time (milliseconds since January 1, 1970)
+// console.log(("0" + (d.getMonth() + 1)).slice(-2));//Get the time (milliseconds since January 1, 1970)
+// console.log(`${d} + `.slice(4, 7))
