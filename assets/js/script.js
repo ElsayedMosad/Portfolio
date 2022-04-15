@@ -85,7 +85,7 @@ dateYear.innerText = d.getFullYear();
 const sections = document.querySelectorAll(".section");
 const mainContent = document.querySelector(".main-content");
 
-console.log(sections);
+// console.log(sections);
 
 let currentIndex = 0;
 
