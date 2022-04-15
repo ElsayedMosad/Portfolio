@@ -3,7 +3,8 @@ function removeClass(ArrayOfElements, classTargetToRemove, newIndexForClass) {
   ArrayOfElements.forEach((element, index) => {
     if (element.classList.contains(classTargetToRemove)) {
       element.classList.remove(classTargetToRemove);
-    } if (index === newIndexForClass) {
+    }
+    if (index === newIndexForClass) {
       element.classList.add(classTargetToRemove);
     }
   });
@@ -128,3 +129,31 @@ moveButs.forEach((but) => {
     }
   });
 });
+
+const about = document.querySelector(".about");
+const aboutMe = document.querySelector(".about-me");
+const aboutIcons = document.querySelector(".about-icons");
+const aboutIconNum = document.querySelectorAll(".icon-num");
+// console.log(aboutIconNum);
+
+let start = false;
+about.addEventListener("scroll", () => {
+  if (about.offsetTop + about.scrollTop + 200 > aboutIcons.offsetTop) {
+  // if (about.scrollTop + 200 > aboutMe.clientHeight) {
+    if (!start) {
+      aboutIconNum.forEach((e) => {
+        counterIcon(e, e.dataset.number);
+      });
+      start = true;
+    }
+  }
+});
+
+function counterIcon (ele, end) {
+  let count = setInterval( () =>  {
+    ele.textContent ++;
+    if (ele.textContent == end) {
+      clearInterval(count)
+    }
+  },100)
+}

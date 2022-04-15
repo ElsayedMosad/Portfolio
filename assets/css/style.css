@@ -526,7 +526,7 @@ button {
 }
 .content .right-side .date {
   text-align: center;
-  margin: 20px 0 50px;
+  margin: 20px 0 30px;
 }
 .content .right-side .date .date-number {
   color: var(--var-color);
@@ -919,7 +919,8 @@ button {
     width: 300px;
   }
   .about .about-me .about-me-head {
-    font-size: 25px;
+    font-size: 32px;
+    padding-right: 10px;
   }
   .about .about-me .about-me-par {
     font-size: 15px;
@@ -980,6 +981,7 @@ button {
   font-size: 15px;
   color: var(--f-color);
   margin: 6px 0 2px;
+  /* transition: 0.3s; */
 }
 .about .about-icons .about-icon-box .icon-box-name {
   font-size: 13px;
@@ -987,7 +989,7 @@ button {
 }
 @media (min-width: 576px) {
   .about .about-icons .about-icon-box i {
-    font-size: 23px;
+    font-size: 26px;
   }
   .about .about-icons .about-icon-box .icon-num {
     font-size: 17px;
@@ -1002,6 +1004,52 @@ button {
     grid-template-columns: repeat(4, 1fr);
     padding: 25px 0;
   }
+}
+
+.about .about-skills {
+  margin: 10px 0;
+  line-height: 1.7;
+  color: var(--f-color);
+}
+
+.about .about-skills .skills-text .skills-head {
+  /* color: var(--f-color); */
+  font-size: 20px;
+  margin: 10px 0;
+  /* font-weight: 500; */
+}
+.about .about-skills .skills-text .skills-par {
+  font-size: 13px;
+  margin: 10px 0;
+}
+
+.about .about-skills .about-knowledge {
+  margin: 15px 0;
+}
+.about .about-skills .about-knowledge li {
+  margin: 25px;
+  font-size: 14px;
+  position: relative;
+}
+.about .about-skills .about-knowledge li::before {
+  content: '';
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: var(--var-color);
+  border-radius: 50%;
+  border: 1px solid var(--con-color);
+  outline: 1px solid var(--var-color);
+}
+
+
+
+.about-hei  {
+  height: 600px;
+  background-color: blueviolet;
 }
 
 .resume {
