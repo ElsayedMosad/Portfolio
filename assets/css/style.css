@@ -12,7 +12,7 @@
   --head-weight: 500;
 
   /* -- Line Height */
-  --line-h: 1.5;
+  --line-h: 1.6;
 
   /* Border Radius */
   --bor-rad: 20px;
@@ -117,7 +117,7 @@ button {
 @media (max-width: 991.99px) {
   .content .container {
     height: 95vh;
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
 }
 /* -- Toggle -- */
@@ -349,11 +349,24 @@ button {
     transform: translateX(100vw);
     justify-content: space-around;
     transition: 0.3s ease;
-    border: 2px solid green;
+    /* border: 2px solid green; */
   }
   .content .container.more-list .left-side {
     transform: translateX(0);
     left: 0;
+  }
+  .content .left-side .nav .nav-link.active-link i,
+  .content .left-side .nav .nav-link:hover i {
+    transform: translateY(-4px);
+  }
+  .content .left-side .nav .nav-link .item-name {
+    transform: translateY(2px);
+    opacity: 1;
+    visibility: visible;
+  }
+  .content .left-side .nav .nav-link.active-link .item-name,
+  .content .left-side .nav .nav-link:hover .item-name {
+    font-weight: 600;
   }
 }
 /* Small For menu */
@@ -391,15 +404,42 @@ button {
   height: 80vh;
   position: relative;
   border-radius: var(--bor-rad);
+  overflow-y: hidden;
+}
+.main .main-content {
+  height: 100%;
+  position: relative;
+  transition: 0.3s ease;
 }
 .content .main .section {
-  /* color: var(--var-color);
-  font-size: 25px; */
-  width: 100%;
+  transition: 0.3s ease;
   height: 100%;
   overflow-y: auto;
+  overflow-x: hidden;
+  padding: 15px;
 }
+.show-sec {
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0.001);
+}
+/* .anim-sec {
+  animation-duration: 0.6s;
+  animation-delay: 0.3s;
+  animation-name: slidein;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  
+}
+@keyframes slidein {
+  0% {
+    transform: translateY(-200px);
+  }
 
+  100% {
+    transform: translateY(0px);
+  }
+} */
 .section::-webkit-scrollbar {
   width: 3px;
 }
@@ -417,7 +457,7 @@ button {
 }
 @media (max-width: 991.99px) {
   .section::-webkit-scrollbar {
-    width: 8px;
+    width: 5px;
   }
   .section::-webkit-scrollbar-track {
     border-top-right-radius: 10px;
@@ -442,7 +482,7 @@ button {
   }
   .content .main {
     width: calc(100% - 405px);
-    padding: 20px;
+    padding: 15px;
   }
   .content .left-side.play-left + .main {
     width: calc(100% - 185px);
@@ -469,7 +509,7 @@ button {
 
 /* -- Right Side -- */
 .content .right-side {
-  min-width: 80px;
+  width: 80px;
   background-color: var(--con-color);
   min-height: 80vh;
   position: relative;
@@ -497,7 +537,7 @@ button {
   color: var(--c-color);
 }
 .content .right-side .follow .follow-me {
-  font-size: 16px;
+  font-size: 14px;
   transform: rotate(90deg);
   letter-spacing: 1px;
 }
@@ -532,7 +572,7 @@ button {
     transition: 0.3s ease;
     flex-direction: row;
     justify-content: space-evenly;
-    border: 2px solid firebrick;
+    /* border: 2px solid firebrick; */
   }
   .content .container.more-list .right-side {
     transform: translateX(0);
@@ -648,15 +688,13 @@ button {
   }
 }
 
-
-
 /* -- Sections -- */
 
 /* -- Home -- */
 
-.main .home {
-  padding: 10px;
-}
+/* .main .home {
+  background-color: red;
+} */
 .main .home .home-box {
   display: flex;
   flex-direction: column;
@@ -719,9 +757,11 @@ button {
     height: 250px;
   }
   .main .home .home-box .home-job {
-    font-size: 19px;
+    font-size: 20px;
     margin: 0 0 20px;
-
+  }
+  .main .home .home-box .home-hello {
+    font-size: 22px;
   }
 }
 
@@ -735,6 +775,7 @@ button {
   .main .home .home-box .home-social {
     display: none;
   }
+
   .main .home .home-box .home-works {
     margin-top: 15px;
   }
@@ -754,4 +795,138 @@ button {
   .main .home .home-box .home-main-img {
     width: 380px;
   }
+}
+
+/* -- About --  */
+/* .about {
+  background-color: coral;
+}
+.about .about-me {
+  min-height: 100%;
+} */
+.about .about-me .about-me-img {
+  margin: 50px auto 25px;
+  width: 220px;
+  max-width: 100%;
+  position: relative;
+}
+.about .about-me .about-me-img img {
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 40px;
+  z-index: 5;
+  position: relative;
+}
+.about .about-me .about-me-img::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--var-color);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 40px;
+  z-index: 3;
+}
+.about .about-me .about-me-text {
+  line-height: 1.7;
+}
+.about .about-me .about-me-head {
+  color: var(--f-color);
+  font-size: 20px;
+  font-weight: var(--head-weight);
+  margin: 15px 0;
+}
+.about .about-me .about-me-par {
+  color: var(--f-color);
+  font-size: 13px;
+  margin: 15px 0;
+}
+.about .about-me .about-info {
+  margin: 15px 0;
+}
+
+.about .about-me .about-info .about-title {
+  color: var(--f-color);
+  font-size: 16px;
+  margin: 10px 3px 5px 0;
+  font-weight: normal;
+}
+.about .about-me .about-info .about-des {
+  color: var(--c-color);
+  font-size: 15px;
+  display: inline-block;
+}
+.about .about-me .hire-me {
+  display: block;
+  margin: 15px 0;
+  width: 140px;
+  padding: 15px 0;
+  text-align: center;
+  background-color: var(--var-color);
+  color: var(--f-color);
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 300;
+}
+@media (min-width: 550px) {
+  .about .about-me .about-me-img {
+    width: 50%;
+    width: 280px;
+  }
+  .about .about-me .about-me-head {
+    font-size: 22px;
+  }
+  .about .about-me .about-me-par {
+    font-size: 15px;
+  }
+  .about .about-me .about-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .about .about-me .about-info .about-info-r,
+  .about .about-me .about-info .about-info-l {
+    margin: 0 20px 0 0;
+  }
+}
+@media (min-width: 992px) {
+  .about .about-me {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .about .about-me .about-me-img {
+    flex-basis: 35%;
+    margin: 15px 0;
+    height: fit-content;
+  }
+  .about .about-me .about-me-text {
+    flex-basis: 50%;
+  }
+  .about .about-me .about-me-head {
+    font-size: 25px;
+  }
+  .about .about-me .about-me-par {
+    font-size: 16px;
+  }
+}
+
+.resume {
+  font-size: 60px;
+  background-color: rgb(45, 202, 255);
+}
+.works {
+  font-size: 60px;
+  background-color: rgb(155, 244, 0);
+}
+.blog {
+  font-size: 60px;
+  background-color: darkolivegreen;
+}
+.contact {
+  font-size: 60px;
+  background-color: rgb(255, 0, 0);
 }

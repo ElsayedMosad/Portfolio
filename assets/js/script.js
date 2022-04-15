@@ -1,29 +1,31 @@
 // Genral functions
-function removeClass(ArrayOfElements, classTargetToRemove) {
-  ArrayOfElements.forEach((element) => {
+function removeClass(ArrayOfElements, classTargetToRemove, newIndexForClass) {
+  ArrayOfElements.forEach((element, index) => {
     if (element.classList.contains(classTargetToRemove)) {
       element.classList.remove(classTargetToRemove);
+    } if (index === newIndexForClass) {
+      element.classList.add(classTargetToRemove);
     }
   });
 }
 const leftSide = document.querySelector(".left-side");
 const navLinks = document.querySelectorAll(".nav .nav-link");
-// console.log(leftSide);
 
+// navLinks.forEach((index))
 // add active link to a clicked
 navLinks.forEach((e, index) => {
   e.addEventListener("click", function () {
     if (!e.classList.contains("active-link")) {
-
-      removeClass(navLinks, "active-link");
-      e.classList.add("active-link");
+      removeClass(navLinks, "active-link", index);
+      // e.classList.add("active-link");
       // console.log(index);
+      currentIndex = index;
+      showCurrentSec(currentIndex);
 
       // Play-left on large media
       if (funWorkOnLargeM()) {
         classPlayLeft(index);
       }
-      
     }
   });
 });
@@ -35,7 +37,7 @@ function funWorkOnLargeM() {
 }
 
 // class play left depand on index
-function classPlayLeft (index) {
+function classPlayLeft(index) {
   if (index === 0 || index === navLinks.length - 1) {
     if (leftSide.classList.contains("play-left")) {
       leftSide.classList.remove("play-left");
@@ -45,19 +47,17 @@ function classPlayLeft (index) {
   }
 }
 
-// return to true style 
+// return to true style
 window.addEventListener("resize", reportWindowSize);
 function reportWindowSize() {
-  if(funWorkOnLargeM()) {
+  if (funWorkOnLargeM()) {
     navLinks.forEach((e, index) => {
       if (e.classList.contains("active-link")) {
-        classPlayLeft(index)
+        classPlayLeft(index);
       }
     });
   }
 }
-
-
 
 // Toggle side
 const toggleSide = document.querySelector(".toggle-side");
@@ -67,31 +67,64 @@ toggleSide.addEventListener("click", (e) => {
   containrContent.classList.toggle("more-list");
 });
 
-
 // Date at Right side
 
 const d = new Date();
 
 // console.log(d)
 
-const dateDay = document.getElementById('date-day');
-dateDay.innerText = d.getDate()
+const dateDay = document.getElementById("date-day");
+dateDay.innerText = d.getDate();
 
-const dateMonth = document.getElementById('date-month');
-dateMonth.innerText = `${d} + `.slice(4, 7)
+const dateMonth = document.getElementById("date-month");
+dateMonth.innerText = `${d} + `.slice(4, 7);
 
-const dateYear = document.getElementById('date-year');
-dateYear.innerText = d.getFullYear()
+const dateYear = document.getElementById("date-year");
+dateYear.innerText = d.getFullYear();
 
+const sections = document.querySelectorAll(".section");
+const mainContent = document.querySelector(".main-content");
 
+console.log(sections);
 
-// console.log(d.getFullYear());//Get the year as a four digit number (yyyy)
-// console.log(d.getMonth());//Get the month as a number (0-11)
-// console.log(d.getDate());//Get the day as a number (1-31)
-// console.log(d.getHours());//Get the hour (0-23)
-// console.log(d.getMinutes());//Get the minute (0-59)
-// console.log(d.getSeconds());//Get the second (0-59)
-// console.log(d.getMilliseconds());//Get the millisecond (0-999)
-// console.log(d.getTime());//Get the time (milliseconds since January 1, 1970)
-// console.log(("0" + (d.getMonth() + 1)).slice(-2));//Get the time (milliseconds since January 1, 1970)
-// console.log(`${d} + `.slice(4, 7))
+let currentIndex = 0;
+
+function showCurrentSec(i) {
+  sections.forEach((element, index) => {
+    if (index === i) {
+      element.classList.remove("show-sec");
+      // element.classList.add("anim-sec");
+    } else {
+      element.classList.add("show-sec");
+      // element.classList.remove("anim-sec");
+    }
+    mainContent.style.cssText = `transform: translateY(calc(-100% * ${i}));`;
+  });
+}
+showCurrentSec(currentIndex);
+
+const moveButs = document.querySelectorAll(".move .move-but");
+
+moveButs.forEach((but) => {
+  but.addEventListener("click", () => {
+    // console.log(but)
+    if (but.classList.contains("move-up")) {
+      currentIndex++;
+      if (currentIndex === navLinks.length) {
+        currentIndex = 0;
+      }
+      showCurrentSec(currentIndex);
+      removeClass(navLinks, "active-link", currentIndex);
+      classPlayLeft(currentIndex);
+    } else if (but.classList.contains("move-down")) {
+      currentIndex--;
+      if (currentIndex === -1) {
+        currentIndex = navLinks.length - 1;
+      }
+      showCurrentSec(currentIndex);
+      removeClass(navLinks, "active-link");
+      removeClass(navLinks, "active-link", currentIndex);
+      classPlayLeft(currentIndex);
+    }
+  });
+});
