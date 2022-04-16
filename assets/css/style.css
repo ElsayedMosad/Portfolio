@@ -16,6 +16,29 @@
 
   /* Border Radius */
   --bor-rad: 20px;
+
+
+
+  /* Font Size */
+  /* --body-font: 'Poppins', sans-serif; */
+  --biggest-font-size: 2.25rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+}
+@media screen and (min-width: 768px){
+  :root{
+    --biggest-font-size: 4rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
 }
 *,
 ::before,
@@ -870,13 +893,13 @@ button {
 }
 .about .about-me .about-me-head {
   color: var(--f-color);
-  font-size: 20px;
+  font-size: var(--h2-font-size);
   font-weight: var(--head-weight);
   margin: 15px 0;
 }
 .about .about-me .about-me-par {
   color: var(--f-color);
-  font-size: 13px;
+  font-size: var(--normal-font-size);
   margin: 15px 0;
 }
 .about .about-me .about-info {
@@ -885,13 +908,13 @@ button {
 
 .about .about-me .about-info .about-title {
   color: var(--f-color);
-  font-size: 16px;
+  font-size: var(--normal-font-size);
   margin: 10px 3px 5px 0;
   font-weight: normal;
 }
 .about .about-me .about-info .about-des {
   color: var(--c-color);
-  font-size: 15px;
+  font-size: var(--small-font-size);
   display: inline-block;
 }
 .about .about-me .hire-me {
@@ -903,7 +926,7 @@ button {
   background-color: var(--var-color);
   color: var(--f-color);
   border-radius: 20px;
-  font-size: 16px;
+  font-size: var(--normal-font-size);
   font-weight: 300;
 }
 @media (min-width: 576px) {
@@ -912,7 +935,7 @@ button {
     width: 300px;
   }
   .about .about-me .about-me-head {
-    font-size: 24px;
+    /* font-size: 24px; */
   }
   .about .about-me .about-info .flex-info {
     display: flex;
@@ -949,11 +972,11 @@ button {
     width: 300px;
   }
   .about .about-me .about-me-head {
-    font-size: 32px;
+    /* font-size: 32px; */
     padding-right: 10px;
   }
   .about .about-me .about-me-par {
-    font-size: 15px;
+    /* font-size: 15px; */
   }
 }
 @media (min-width: 1100px) {
@@ -1004,17 +1027,17 @@ button {
   padding: 5px;
 }
 .about .about-icons .about-icon-box i {
-  font-size: 20px;
+  font-size: var(--h2-font-size);
   color: var(--var-color);
 }
 .about .about-icons .about-icon-box .icon-num {
-  font-size: 15px;
+  font-size: var(--normal-font-size);
   color: var(--f-color);
   margin: 6px 0 2px;
   /* transition: 0.3s; */
 }
 .about .about-icons .about-icon-box .icon-box-name {
-  font-size: 13px;
+  font-size: var(--small-font-size);
   color: var(--c-color);
 }
 @media (min-width: 576px) {
@@ -1022,13 +1045,13 @@ button {
     width: 80%;
   }
   .about .about-icons .about-icon-box i {
-    font-size: 26px;
+    /* font-size: 26px; */
   }
   .about .about-icons .about-icon-box .icon-num {
-    font-size: 17px;
+    /* font-size: 17px; */
   }
   .about .about-icons .about-icon-box .icon-box-name {
-    font-size: 15px;
+    /* font-size: 15px; */
   }
 }
 
@@ -1047,22 +1070,20 @@ button {
 }
 
 .about .about-skills .skills-text .skills-head {
-  /* color: var(--f-color); */
-  font-size: 20px;
+  font-size: var(--h2-font-size);
   margin: 10px 0;
-  /* font-weight: 500; */
 }
 .about .about-skills .skills-text .skills-par {
-  font-size: 13px;
+  font-size: var(--small-font-size);
   margin: 10px 0;
 }
 
 .about .about-skills .about-knowledge {
-  margin: 15px 0;
+  margin: 25px 0;
 }
 .about .about-skills .about-knowledge li {
-  margin: 25px;
-  font-size: 14px;
+  margin: 25px 20px;
+  font-size: var(--normal-font-size);
   position: relative;
 }
 .about .about-skills .about-knowledge li::before {
@@ -1080,7 +1101,7 @@ button {
 }
 
 .skills-design .skill-name {
-  font-size: 15px;
+  font-size: var(--small-font-size);
   margin: 8px 0 0;
   color: var(--f-color);
   font-weight: normal;
@@ -1114,7 +1135,7 @@ button {
   position: absolute;
   right: 0;
   top: -30px;
-  font-size: 13px;
+  font-size: var(--small-font-size);
   color: var(--f-color);
 }
 @media (min-width: 576px) {
