@@ -859,6 +859,7 @@ button {
 }
 
 /* -- About --  */
+
 .about .about-me {
   display: grid;
 }
@@ -914,7 +915,6 @@ button {
 }
 .about .about-me .about-info .about-des {
   color: var(--c-color);
-  /* font-size: var(--small-font-size); */
   font-size: var(--normal-font-size);
   display: inline-block;
   font-weight: normal;
@@ -1053,6 +1053,9 @@ button {
   line-height: 1.7;
   color: var(--f-color);
 }
+.about .about-skills > div {
+  margin-bottom: 35px;
+}
 
 .about .about-skills .skills-text .skills-head {
   font-size: var(--h2-font-size);
@@ -1182,6 +1185,115 @@ button {
     flex-basis: 45%;
   }
 }
+
+
+
+
+.swiper {
+  width: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+}
+.swiper .swiper-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.swiper .swiper-pagination span {
+  background-color: transparent;
+  border: 1px solid var(--var-color);
+  opacity: 1;
+  width: 10px;
+  height: 10px;
+
+}
+.swiper .swiper-pagination span.swiper-pagination-bullet-active {
+  background-color: var(--var-color);
+  width: 12px;
+  height: 12px;
+
+}
+
+.about .about-testimonial {
+  padding: 10px 0 20px;
+  line-height: 1.6;
+}
+.about .about-testimonial .test-par {
+  font-size: var(--normal-font-size);
+  color: var(--f-color);
+  font-style: italic;
+}
+
+.about .about-testimonial .test-person {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 10px;
+}
+.about .about-testimonial .test-person img {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 15px;
+}
+.about .about-testimonial .person-text  {
+  text-align: left;
+  margin-bottom: 10px;
+}
+.about .about-testimonial .test-person .person-name {
+  color: var(--f-color);
+  margin: 3px 0 0;
+  font-size: var(--normal-font-size);
+  font-weight: 400;
+}
+.about .about-testimonial .test-person .person-jop {
+  color: var(--c-color);
+  font-size: var(--small-font-size);
+}
+
+@media (min-width: 576px) {
+  .about .about-testimonial {
+    width: 80%;
+  }
+  .about .about-testimonial .test-par {
+    font-size: var(--h3-font-size);
+    margin-bottom: 10px;
+  }
+  .about .about-testimonial .test-person img {
+    width: 70px;
+    height: 70px;
+  }
+}
+/* @media (min-width: 992px) {
+  .about .about-testimonial {
+    width: 100%;
+  }
+} */
+
+
 
 
 .about-hei  {
