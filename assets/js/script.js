@@ -138,22 +138,48 @@ const aboutIconNum = document.querySelectorAll(".icon-num");
 
 let start = false;
 about.addEventListener("scroll", () => {
-  if (about.offsetTop + about.scrollTop + 200 > aboutIcons.offsetTop) {
-  // if (about.scrollTop + 200 > aboutMe.clientHeight) {
+  if (about.scrollTop + about.offsetTop + 200  > aboutIcons.offsetTop){
     if (!start) {
       aboutIconNum.forEach((e) => {
-        counterIcon(e, e.dataset.number);
+        counterIcon(e, e.dataset.number, 2000 / e.dataset.number);
       });
       start = true;
     }
   }
 });
 
-function counterIcon (ele, end) {
-  let count = setInterval( () =>  {
-    ele.textContent ++;
+function counterIcon(ele, end, t) {
+  let count = setInterval(() => {
+    ele.textContent++;
     if (ele.textContent == end) {
-      clearInterval(count)
+      clearInterval(count);
     }
-  },100)
+  }, t);
 }
+
+const spanSkills = document.querySelectorAll(".span-show");
+const spanPerSkill = document.querySelectorAll(".span-text");
+const aboutDesign = document.querySelector(".skills-design");
+let doWidth = false;
+about.addEventListener("scroll", () => {
+  if (about.scrollTop + about.offsetTop + 200 > aboutDesign.offsetTop) {
+    if (!doWidth) {
+      spanSkills.forEach((span) => {
+        span.style.width = span.dataset.width;
+      });
+      spanPerSkill.forEach((per) => {
+        counterIcon(per, per.dataset.width, 2000 / per.dataset.width)
+        // per.style.width = per.dataset.width;
+      });
+      doWidth = true;
+    }
+  }
+});
+
+// about.addEventListener("scroll", () => {
+//   // console.log(about.scrollTop)
+//   console.log((about.scrollTop + about.offsetTop + 200 > aboutIcons.offsetTop))
+//   // console.log(about.offsetTop)
+//   // console.log(aboutDesign.offsetTop)
+//   // console.log(aboutDesign.offsetTop + skillsOuterHeight - windowHeight)
+// })

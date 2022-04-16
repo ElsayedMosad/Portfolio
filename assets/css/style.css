@@ -94,6 +94,34 @@ button {
   }
 }
 
+.title {
+  font-size: 25px;
+  color: var(--var-color);
+  margin: 15px 0 30px;
+  position: relative;
+  font-weight: var(--head-weight);
+}
+.title::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: var(--var-color);
+}
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  border-radius: 5px;
+  background: linear-gradient(to right, #dba423, #343539)
+}
+
 /* -- Content -- */
 .content {
   width: 100%;
@@ -424,6 +452,8 @@ button {
   visibility: hidden;
   opacity: 0;
   transform: scale(0.01);
+  height: 0px;
+  overflow: hidden;
 }
 /* .section.about.show-sec {
   
@@ -942,7 +972,7 @@ button {
   }
 }
 .about .about-icons {
-  margin: 30px 0;
+  margin: 30px auto;
   display: grid;
   padding: 15px 0;
   grid-template-columns: repeat(2, 1fr);
@@ -988,6 +1018,9 @@ button {
   color: var(--c-color);
 }
 @media (min-width: 576px) {
+  .about .about-icons {
+    width: 80%;
+  }
   .about .about-icons .about-icon-box i {
     font-size: 26px;
   }
@@ -1001,13 +1034,14 @@ button {
 
 @media (min-width: 992px) {
   .about .about-icons {
+    width: 100%;
     grid-template-columns: repeat(4, 1fr);
     padding: 25px 0;
   }
 }
 
 .about .about-skills {
-  margin: 10px 0;
+  margin: 10px auto;
   line-height: 1.7;
   color: var(--f-color);
 }
@@ -1044,6 +1078,55 @@ button {
   border: 1px solid var(--con-color);
   outline: 1px solid var(--var-color);
 }
+
+.skills-design .skill-name {
+  font-size: 15px;
+  margin: 8px 0 0;
+  color: var(--f-color);
+  font-weight: normal;
+  text-transform: capitalize;
+  text-transform: uppercase;
+}
+.skills-design .skill-show {
+  width: 100%;
+  /* height: 8px; */
+  padding: 2px;
+  margin: 5px 0 25px;
+  border: 2px solid var(--var-color);
+  border-radius: 10px;
+  position: relative;
+  /* 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  */
+}
+.skills-design .skill-show .span-show {
+  display: block;
+  /* position: absolute; */
+  width: 0%;
+  height: 4px;
+  border-radius: 10px;
+  background-color: var(--var-color);
+  transition: 2s linear;
+}
+.skills-design .skill-show .skill-per {
+  position: absolute;
+  right: 0;
+  top: -30px;
+  font-size: 13px;
+  color: var(--f-color);
+}
+@media (min-width: 576px) {
+  .about .about-skills {
+    width: 80%;
+  }
+}
+/* background: linear-gradient(to right, #343539, #dba423, #343539); */
+
+
+
+
 
 
 
