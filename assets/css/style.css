@@ -276,6 +276,11 @@ button {
   opacity: 1;
   transition: 0.6s ease;
   background-color: #564b35;
+  border: 2px solid var(--var-color);
+}
+.content .left-side .my-info .my-cv:hover {
+  background-color: var(--var-color);
+  transition: 0.3s ease;
 }
 .content .left-side .nav-menu {
   position: relative;
@@ -364,6 +369,7 @@ button {
     padding: 0;
     height: 0;
     font-size: 0px;
+    border: 0;
   }
   .content .left-side.play-left .nav-menu {
     position: relative;
@@ -611,7 +617,7 @@ button {
     bottom: 0;
     left: 0;
     z-index: 15;
-    min-height: 80px;
+    height: 80px;
     width: 100%;
     transform: translateX(100vw);
     transition: 0.3s ease;
