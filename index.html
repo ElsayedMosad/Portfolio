@@ -9,7 +9,7 @@
       name="description"
       content="Elsayed Portfolio Website using HTML CSS and JavaScript."
     />
-    <meta name="theme-color" content="#dba423" />
+    <meta name="theme-color" content="#232324" />
 
     <title>Elsayed</title>
     <!-- Link added -->
@@ -46,46 +46,47 @@
         <div class="left-side">
           <div class="my-info">
             <div class="my-img">
-              <img src="assets/imgs/tr.jpg" alt="" />
+              <img src="assets/imgs/meme.jpg" alt="My Image In Left Side" />
             </div>
             <div class="my-name">Elsayed Mo</div>
-            <button class="my-cv">Download CV</button>
+            <button class="my-cv but" aria-label="Download CV">
+              Download CV
+            </button>
           </div>
-          <!-- <div class="down-cv"></div> -->
           <nav class="nav">
             <ul class="nav-menu">
               <li class="nav-item">
-                <a href="#" class="nav-link active-link">
+                <a href="#home" class="nav-link active-link" aria-label="Home">
                   <i class="bi bi-house"></i>
                   <span class="item-name"> home </span>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="#about" class="nav-link" aria-label="About">
                   <i class="bi bi-person"></i>
                   <span class="item-name"> about </span>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="#resume" class="nav-link" aria-label="Resume">
                   <i class="bi bi-clipboard-check"></i>
                   <span class="item-name"> resume </span>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="#works" class="nav-link" aria-label="Works">
                   <i class="bi bi-collection"></i>
                   <span class="item-name"> works </span>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="#blog" class="nav-link" aria-label="Blog">
                   <i class="bi bi-book"></i>
                   <span class="item-name"> blog </span>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="#contact" class="nav-link" aria-label="Contact">
                   <i class="bi bi-geo-alt"></i>
                   <span class="item-name"> contact </span>
                 </a>
@@ -96,44 +97,53 @@
         <main class="main">
           <div class="main-content">
             <section class="home section">
-              <div class="home-box">
-                <div class="home-img">
-                  <img
-                    src="assets/imgs/tr.png"
-                    alt="My Image in Home section"
-                  />
+              <div class="home-img">
+                <img
+                  src="assets/imgs/meme.jpg"
+                  alt="My Image in Home section"
+                />
+              </div>
+              <div class="home-text">
+                <div class="home-job">web developer</div>
+                <div class="home-hello">
+                  Hello , I’m Elsayed Mosad Welcome to my World.
                 </div>
-                <div class="home-text">
-                  <div class="home-job">web developer</div>
-                  <div class="home-hello">
-                    Hello , I’m Elsayed Mosad Welcome to my World.
-                  </div>
-                  <div class="home-social">
-                    <a href="#" class="social-whats home-link"
-                      ><i class="bi bi-whatsapp"></i
-                    ></a>
-                    <a href="#" class="social-face home-link"
-                      ><i class="bi bi-facebook"></i
-                    ></a>
-                    <a href="#" class="social-github home-link"
-                      ><i class="bi bi-github"></i
-                    ></a>
-                  </div>
-                  <button class="home-works">Recent Works</button>
+                <div class="home-social">
+                  <a
+                    href="https://www.facebook.com/"
+                    class="social-whats home-link"
+                    aria-label="whats"
+                    ><i class="bi bi-whatsapp"></i
+                  ></a>
+                  <a
+                    href="https://www.facebook.com/"
+                    class="social-face home-link"
+                    aria-label="facebook"
+                    ><i class="bi bi-facebook"></i
+                  ></a>
+                  <a
+                    href="https://github.com/"
+                    class="social-github home-link"
+                    aria-label="github"
+                    ><i class="bi bi-github"></i
+                  ></a>
                 </div>
-                <div class="home-main-img">
-                  <img
-                    src="assets/imgs/responsive-dark.png"
-                    alt="responsive home img"
-                  />
-                </div>
+                <button class="home-works" aria-label="Recent Works In Home">
+                  Recent Works
+                </button>
+              </div>
+              <div class="home-main-img">
+                <img
+                  src="assets/imgs/responsive-dark.png"
+                  alt="responsive home img"
+                />
               </div>
             </section>
 
             <section class="section about">
               <div class="about-me">
                 <div class="about-me-img">
-                  <img src="assets/imgs/tr.jpg" alt="" />
+                  <img src="assets/imgs/about.jpg" alt="About Image" />
                 </div>
                 <div class="about-me-text">
                   <h2 class="about-me-head">
@@ -178,7 +188,7 @@
                       </h4>
                     </div>
                   </div>
-                  <button class="hire-me">hire me</button>
+                  <button class="hire-me" aria-label="Hire Me">hire me</button>
                 </div>
               </div>
               <div class="about-icons">
@@ -373,16 +383,9 @@
                       </div>
                     </div>
                   </div>
-                  <!-- <div class="swiper-slide">Slide 2</div>
-                  <div class="swiper-slide">Slide 3</div>
-                  <div class="swiper-slide">Slide 4</div>
-                  <div class="swiper-slide">Slide 9</div> -->
                 </div>
-                <!-- <div class="swiper-button-next"></div> -->
-                <!-- <div class="swiper-button-prev"></div> -->
                 <div class="swiper-pagination"></div>
               </div>
-              <!-- <div class="about-hei"></div> -->
             </section>
             <section class="section resume">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
@@ -429,8 +432,6 @@
               aliquam, sed debitis quia in a neque, quod ullam esse, facere
             </section>
           </div>
-          <!-- <section class="home"></section>
-            <section class="works"></section> -->
         </main>
         <div class="right-side">
           <div class="date">
@@ -444,23 +445,32 @@
             <p class="follow-me">Follow Me</p>
             <span class="follow-line"></span>
             <div class="follow-social">
-              <a href="#" class="social-whats follow-link"
+              <a
+                href="https://www.facebook.com/"
+                class="social-whats follow-link"
+                aria-label="whatsapp"
                 ><i class="bi bi-whatsapp"></i
               ></a>
-              <a href="#" class="social-face follow-link"
+              <a
+                href="https://www.facebook.com/"
+                class="social-face follow-link"
+                aria-label="facebook"
                 ><i class="bi bi-facebook"></i
               ></a>
-              <a href="#" class="social-github follow-link"
+              <a
+                href="https://github.com/"
+                class="social-github follow-link"
+                aria-label="github"
                 ><i class="bi bi-github"></i
               ></a>
             </div>
           </div>
         </div>
         <div class="move">
-          <button class="move-up move-but">
+          <button class="move-up move-but" aria-label="Move Up">
             <i class="bi bi-chevron-compact-up"></i>
           </button>
-          <button class="move-down move-but">
+          <button class="move-down move-but" aria-label="Move Down">
             <i class="bi bi-chevron-compact-down"></i>
           </button>
         </div>

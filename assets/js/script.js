@@ -12,14 +12,11 @@ function removeClass(ArrayOfElements, classTargetToRemove, newIndexForClass) {
 const leftSide = document.querySelector(".left-side");
 const navLinks = document.querySelectorAll(".nav .nav-link");
 
-// navLinks.forEach((index))
 // add active link to a clicked
 navLinks.forEach((e, index) => {
   e.addEventListener("click", function () {
     if (!e.classList.contains("active-link")) {
       removeClass(navLinks, "active-link", index);
-      // e.classList.add("active-link");
-      // console.log(index);
       currentIndex = index;
       showCurrentSec(currentIndex);
 
@@ -138,7 +135,7 @@ const aboutIconNum = document.querySelectorAll(".icon-num");
 
 let start = false;
 about.addEventListener("scroll", () => {
-  if (about.scrollTop + about.offsetTop + 200  > aboutIcons.offsetTop){
+  if (about.scrollTop + about.offsetTop + 200 > aboutIcons.offsetTop) {
     if (!start) {
       aboutIconNum.forEach((e) => {
         counterIcon(e, e.dataset.number, 2000 / e.dataset.number);
@@ -168,15 +165,13 @@ about.addEventListener("scroll", () => {
         span.style.width = span.dataset.width;
       });
       spanPerSkill.forEach((per) => {
-        counterIcon(per, per.dataset.width, 2000 / per.dataset.width)
+        counterIcon(per, per.dataset.width, 2000 / per.dataset.width);
         // per.style.width = per.dataset.width;
       });
       doWidth = true;
     }
   }
 });
-
-
 
 // Swiper
 var swiper = new Swiper(".mySwiper", {
@@ -192,14 +187,3 @@ var swiper = new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
 });
-
-
-
-
-// about.addEventListener("scroll", () => {
-//   // console.log(about.scrollTop)
-//   console.log((about.scrollTop + about.offsetTop + 200 > aboutIcons.offsetTop))
-//   // console.log(about.offsetTop)
-//   // console.log(aboutDesign.offsetTop)
-//   // console.log(aboutDesign.offsetTop + skillsOuterHeight - windowHeight)
-// })
