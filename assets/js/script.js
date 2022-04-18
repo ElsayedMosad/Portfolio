@@ -9,24 +9,7 @@ function removeClass(ArrayOfElements, classTargetToRemove, newIndexForClass) {
     }
   });
 }
-const leftSide = document.querySelector(".left-side");
-const navLinks = document.querySelectorAll(".nav .nav-link");
 
-// add active link to a clicked
-navLinks.forEach((e, index) => {
-  e.addEventListener("click", function () {
-    if (!e.classList.contains("active-link")) {
-      removeClass(navLinks, "active-link", index);
-      currentIndex = index;
-      showCurrentSec(currentIndex);
-
-      // Play-left on large media
-      if (funWorkOnLargeM()) {
-        classPlayLeft(index);
-      }
-    }
-  });
-});
 // Return true in large media
 function funWorkOnLargeM() {
   if (window.innerWidth > 992) {
@@ -44,6 +27,31 @@ function classPlayLeft(index) {
     leftSide.classList.add("play-left");
   }
 }
+
+
+const leftSide = document.querySelector(".left-side");
+const navLinks = document.querySelectorAll(".nav .nav-link");
+
+// add active link to a clicked
+navLinks.forEach((e, index) => {
+  e.addEventListener("click", function () {
+    if (!funWorkOnLargeM() && containrContent.classList.contains("more-list")) {
+      containrContent.classList.toggle("more-list");
+      toggleSide.classList.toggle("toggle-open");
+    }
+    if (!e.classList.contains("active-link")) {
+      removeClass(navLinks, "active-link", index);
+      currentIndex = index;
+      showCurrentSec(currentIndex);
+
+      // Play-left on large media
+      if (funWorkOnLargeM()) {
+        classPlayLeft(index);
+      }
+    }
+  });
+});
+
 
 // return to true style
 window.addEventListener("resize", reportWindowSize);
