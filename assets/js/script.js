@@ -192,6 +192,35 @@ recentWorks.onclick = function () {
   }
 };
 
+// window.addEventListener('DOMContentLoaded', (event) => {
+//   console.log('DOM fully loaded and parsed');
+// });
+
+
+// Works search
+const worksButs = document.querySelectorAll(".work-but");
+const projectBox = document.querySelectorAll(".project-box");
+
+worksButs.forEach((e) => {
+  e.addEventListener("click", () => {
+    // console.log(e.dataset.type)
+    currentItems(projectBox, e.dataset.type);
+  });
+});
+
+function currentItems(elements, currentData) {
+  elements.forEach((e) => {
+    if (e.dataset.pro == currentData && currentData !== "all") {
+      e.style.cssText = `display: block;`;
+    } else {
+      e.style.cssText = `display: none;`;
+    }
+    if (currentData === "all") {
+      e.style.cssText = `display: block;`;
+    }
+  });
+}
+
 // Swiper
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
