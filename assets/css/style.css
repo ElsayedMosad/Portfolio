@@ -130,7 +130,7 @@ button {
 .title::before {
   content: "";
   position: absolute;
-  bottom: -10px;
+  bottom: -12px;
   left: 0;
   width: 60px;
   height: 5px;
@@ -140,7 +140,7 @@ button {
 .title::after {
   content: "";
   position: absolute;
-  bottom: -8px;
+  bottom: -10.5px;
   left: 0;
   width: 100%;
   height: 1px;
@@ -530,7 +530,7 @@ button {
   }
   .content .main {
     width: calc(100% - 405px);
-    padding: 15px 20px 15px;
+    padding: 15px 25px 15px;
   }
   .content .left-side.play-left + .main {
     width: calc(100% - 185px);
@@ -744,64 +744,69 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
   text-align: center;
   min-height: 100%;
 }
 .main .home .home-img {
+  overflow: hidden;
+}
+.main .home .home-img img {
+  display: block;
   width: 190px;
   height: 190px;
   border-radius: 50%;
   max-width: 100%;
   margin: 10px 0 0;
-  overflow: hidden;
+  /* width: 100%; */
+  /* height: 100%; */
 }
-.main .home .home-img img {
-  width: 100%;
-  height: 100%;
+.home .home-text {
+  margin-top: 30px;
 }
-.main .home .home-job {
+.home .home-job {
   font-size: var(--h3-font-size);
   text-transform: uppercase;
   color: var(--var-color);
   margin: 0 0 15px;
 }
-.main .home .home-hello {
+.home .home-hello {
   color: var(--f-color);
   font-size: var(--h3-font-size);
   margin: 13px auto;
   font-weight: var(--head-weight);
   max-width: 280px;
 }
-.main .home .home-link {
+.home .home-link {
   color: var(--c-color);
   display: inline-block;
   padding: 2px;
   margin: 0 8px;
   font-size: var(--h2-font-size);
 }
-.main .home .home-works {
+.home .home-works {
   font-size: 16px;
   color: var(--f-color);
-  border-radius: var(--normal-bor-rad);
+  border-radius: var(--big-bor-rad);
   transition: 0.3s ease;
-  width: 170px;
+  width: 175px;
   height: 48px;
   padding: 14px 0;
   font-weight: 300;
   border: 2px solid var(--var-color);
   max-width: 100%;
   margin-top: 30px;
+  background-color: #564b35;
 }
-.main .home .home-works:hover {
+.home .home-works:hover {
   background-color: var(--var-color);
 }
-.main .home .home-main-img {
+.home .home-main-img {
   display: none;
 }
 
 @media (min-width: 576px) {
-  .main .home .home-img {
+  .main .home .home-img img {
     width: 250px;
     height: 250px;
   }
@@ -816,6 +821,9 @@ button {
   }
   .main .home .home-img {
     display: none;
+  }
+  .main .home .home-text {
+    margin-top: 0;
   }
   .main .home .home-social {
     display: none;
@@ -848,10 +856,10 @@ button {
   display: grid;
 }
 .about .about-me .about-me-img {
+  position: relative;
   margin: 50px auto 25px;
   width: 200px;
   max-width: 100%;
-  position: relative;
 }
 .about .about-me .about-me-img img {
   border-top-left-radius: 30px;
@@ -1045,7 +1053,7 @@ button {
 
 .about .about-skills .skills-text .skills-head {
   font-size: var(--h2-font-size);
-  margin: 10px 0;
+  margin: 15px 0;
 }
 .about .about-skills .skills-text .skills-par {
   font-size: var(--small-font-size);
@@ -1078,7 +1086,7 @@ button {
 
 .skills-design .skill-name {
   font-size: var(--small-font-size);
-  margin: 8px 0 0;
+  /* margin: 10px 0 0; */
   color: var(--f-color);
   font-weight: normal;
   text-transform: capitalize;
@@ -1087,7 +1095,7 @@ button {
 .skills-design .skill-show {
   width: 100%;
   padding: 2px;
-  margin: 5px 0 30px;
+  margin: 5px 0 35px;
   border: 2px solid var(--var-color);
   border-radius: 10px;
   position: relative;
@@ -1266,20 +1274,22 @@ button {
   }
 }
 
-
-
 /* -- Resume -- */
-.resume .title{
+.resume > div {
+  margin-bottom: 70px;
+}
+.resume .title {
   font-size: 30px;
   font-weight: 400;
+  width: 90%;
 }
-.resume .serv-item{
+.resume .resume-item {
   margin: 25px 0;
   padding: 0 10px 0 0;
   position: relative;
 }
-.resume .serv-item::after {
-  content: '';
+.resume .resume-item::after {
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1287,32 +1297,30 @@ button {
   height: 1px;
   background: linear-gradient(to right, #343539, #dba423);
 }
-.resume .serv-item:nth-child(even):after {
+.resume .resume-item:nth-child(even):after {
   background: linear-gradient(to right, #dba423, #343539);
 }
-.resume .serv-item i {
+.resume .resume-item i {
   font-size: 35px;
   color: var(--var-color);
 }
-.resume .serv-item .serv-head {
+.resume .resume-item .resume-head {
   font-size: var(--h3-font-size);
   color: var(--f-color);
-  margin: 0 0 10px;
+  margin: 5px 0 5px;
   font-weight: var(--head-weight);
 }
-.resume .serv-item .serv-par {
+.resume .resume-item .resume-par {
   font-size: var(--normal-font-size);
   color: var(--c-color);
   font-weight: 300;
   padding-bottom: 20px;
-  /* margin: 10px 0; */
 }
 
 @media (min-width: 567px) {
-  .resume .serv-box {
+  .resume .resume-box {
     width: 80%;
     margin: auto;
-    padding: 20px 0;
   }
   .resume .title {
     width: 80%;
@@ -1322,15 +1330,15 @@ button {
 }
 
 @media (min-width: 768px) {
-  .resume .serv-box{
+  .resume .resume-box {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     width: 90%;
     position: relative;
   }
-  .resume .serv-box::after {
-    content: '';
+  .resume .resume-box::after {
+    content: "";
     position: absolute;
     top: 0;
     left: 50%;
@@ -1339,54 +1347,38 @@ button {
     background: linear-gradient(to bottom, #343539, #dba423, #343539);
   }
   .resume .title {
-    width: 90%;
+    width: 40%;
+    margin-left: 5%;
   }
-  .resume .serv-item {
+  .resume .resume-item {
     flex-basis: 50%;
     text-align: left;
     padding: 10px 30px 10px 0;
     margin: 0;
   }
-  .resume .serv-item:nth-child(5):after,
-  .resume .serv-item:nth-child(6):after {
+  .resume .resume-item:nth-last-child(-n + 2)::after {
     background: none;
   }
-  .resume .serv-item:nth-child(even) {
+  .resume .resume-item:nth-child(even) {
     padding: 10px 20px 10px 20px;
   }
 }
 
 @media (min-width: 992px) {
-  .resume .serv-box {
+  .resume .resume-box {
     width: 100%;
   }
   .resume .title {
-    width: 50%;
+    width: 35%;
     margin-left: 0;
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-.about-hei {
-  height: 600px;
-  background-color: blueviolet;
+.resume .resume-date {
+  font-size: var(--normal-font-size);
+  color: var(--var-color);
 }
-/* 
-.resume {
-  font-size: 60px;
-  background-color: rgb(45, 202, 255);
-} */
+
 .works {
   font-size: 60px;
   background-color: rgb(155, 244, 0);

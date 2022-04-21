@@ -28,7 +28,6 @@ function classPlayLeft(index) {
   }
 }
 
-
 const leftSide = document.querySelector(".left-side");
 const navLinks = document.querySelectorAll(".nav .nav-link");
 
@@ -51,7 +50,6 @@ navLinks.forEach((e, index) => {
     }
   });
 });
-
 
 // return to true style
 window.addEventListener("resize", reportWindowSize);
@@ -180,6 +178,19 @@ about.addEventListener("scroll", () => {
     }
   }
 });
+
+// Recent Works
+
+const recentWorks = document.querySelector(".home-works");
+
+recentWorks.onclick = function () {
+  currentIndex = 3;
+  showCurrentSec(currentIndex);
+  removeClass(navLinks, "active-link", currentIndex);
+  if (funWorkOnLargeM()) {
+    classPlayLeft(3);
+  }
+};
 
 // Swiper
 var swiper = new Swiper(".mySwiper", {
