@@ -201,10 +201,11 @@ recentWorks.onclick = function () {
 const worksButs = document.querySelectorAll(".work-but");
 const projectBox = document.querySelectorAll(".project-box");
 
-worksButs.forEach((e) => {
+worksButs.forEach((e,index) => {
   e.addEventListener("click", () => {
     // console.log(e.dataset.type)
     currentItems(projectBox, e.dataset.type);
+    removeClass(worksButs, "active-but", index)
   });
 });
 
