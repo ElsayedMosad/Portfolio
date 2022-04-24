@@ -141,10 +141,10 @@ const aboutIconNum = document.querySelectorAll(".icon-num");
 
 let start = false;
 about.addEventListener("scroll", () => {
-  if (about.scrollTop + about.offsetTop + 200 > aboutIcons.offsetTop) {
+  if (about.scrollTop + about.offsetTop + 250 > aboutIcons.offsetTop) {
     if (!start) {
       aboutIconNum.forEach((e) => {
-        counterIcon(e, e.dataset.number, 2000 / e.dataset.number);
+        counterIcon(e, e.dataset.number, 4000 / e.dataset.number);
       });
       start = true;
     }
@@ -179,6 +179,37 @@ about.addEventListener("scroll", () => {
   }
 });
 
+// About Testimonial
+
+const testimonialFlex = document.querySelector(".test-flex");
+const testimonialBullets = document.querySelectorAll(".item-bullet");
+const testBoxs = document.querySelectorAll(".test-box");
+
+let m = 0;
+
+testimonialBullets.forEach((bullet, index) => {
+  bullet.addEventListener("click", () => {
+    removeClass(testimonialBullets, "active-bullet", index);
+    testimonialFlex.style.cssText = `transform: translateX(-${100 * index}%);`;
+    m = index;
+    removeClass(testBoxs, "current-box", m);
+  });
+});
+
+function testFlexChange() {
+  m++;
+  if (m === testimonialBullets.length) {
+    m = 0;
+  }
+  testimonialFlex.style.cssText = `transform: translateX(-${100 * m}%);`;
+  removeClass(testimonialBullets, "active-bullet", m);
+  removeClass(testBoxs, "current-box", m);
+}
+
+// testFlexChange()
+
+setInterval(testFlexChange, 7000);
+
 // Recent Works
 
 const recentWorks = document.querySelector(".home-works");
@@ -196,16 +227,14 @@ recentWorks.onclick = function () {
 //   console.log('DOM fully loaded and parsed');
 // });
 
-
 // Works search
 const worksButs = document.querySelectorAll(".work-but");
 const projectBox = document.querySelectorAll(".project-box");
 
-worksButs.forEach((e,index) => {
+worksButs.forEach((e, index) => {
   e.addEventListener("click", () => {
-    // console.log(e.dataset.type)
     currentItems(projectBox, e.dataset.type);
-    removeClass(worksButs, "active-but", index)
+    removeClass(worksButs, "active-but", index);
   });
 });
 
@@ -223,16 +252,16 @@ function currentItems(elements, currentData) {
 }
 
 // Swiper
-var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 1,
-  spaceBetween: 30,
-  loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
+// var swiper = new Swiper(".mySwiper", {
+//   slidesPerView: 1,
+//   spaceBetween: 30,
+//   loop: true,
+//   pagination: {
+//     el: ".swiper-pagination",
+//     clickable: true,
+//   },
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+// });
