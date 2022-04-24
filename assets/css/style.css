@@ -1457,9 +1457,6 @@ button {
 }
 .works .works-items .items-buts .work-but:hover,
 .works .works-items .items-buts .work-but.active-but {
-  /* color: var(--f-color); */
-  /* background-color: var(--var-color); */
-  /* box-shadow: inset 3px 3px 3px #202125, inset -3px -3px 3px #3e3e3e; */
   box-shadow: inset 4px 4px 3px #202125, inset -4px -4px 3px #454545;
 }
 .works .works-items .items-buts .work-but.active-but {
@@ -1550,7 +1547,6 @@ button {
 }
 @media (min-width: 768px) {
   .works .items-projects {
-    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -1560,13 +1556,9 @@ button {
   }
 }
 
-.blog {
-  
-}
+/* -- Blog -- */
 .blog .blog-items {
   display: grid;
-  /* gap: 20px; */
-  /* padding-bottom: 30px; */
   position: relative;
   row-gap: 30px;
 }
@@ -1697,7 +1689,6 @@ button {
   }
   .blog-box .blog-text .blog-title{
     font-weight: 600;
-    /* font-size: var(--h3-font-size); */
   }
   .blog .blog-box:nth-last-child(-n + 2)::after {
     background: none;
