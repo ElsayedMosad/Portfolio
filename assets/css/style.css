@@ -255,12 +255,12 @@ button {
 }
 .content .left-side .my-info .my-name {
   color: var(--f-color);
-  font-size: var(--h3-font-size);
+  font-size: var(--h2-font-size);
   margin-top: 20px;
   font-weight: var(--head-weight);
 }
 .content .left-side .my-info .my-cv {
-  margin-top: 18px;
+  margin-top: 25px;
   width: 170px;
   height: 48px;
   padding: 0;
@@ -268,7 +268,7 @@ button {
   visibility: visible;
   overflow: hidden;
   opacity: 1;
-  /* transition: 0.8s ease; */
+  transition: 0.8s ease;
   background-color: #564b35;
   border: 2px solid var(--var-color);
 }
@@ -524,7 +524,6 @@ button {
   .content .left-side .my-info,
   .content .left-side .my-img,
   .content .left-side .my-name,
-  .content .left-side .my-info .my-cv,
   .content .left-side .nav .nav-item,
   .content .left-side .nav-menu,
   .content .main {
@@ -1280,7 +1279,7 @@ button {
 
 /* -- Resume -- */
 .resume > div {
-  margin-bottom: 70px;
+  margin-bottom: 30px;
 }
 .resume .title {
   font-size: 30px;
@@ -1303,6 +1302,9 @@ button {
 }
 .resume .resume-item:nth-child(even):after {
   background: linear-gradient(to right, #dba423, #343539);
+}
+.resume .resume-item:last-child:after {
+  background: none;
 }
 .resume .resume-item i {
   font-size: 35px;
@@ -1559,9 +1561,174 @@ button {
 }
 
 .blog {
-  font-size: 60px;
-  background-color: darkolivegreen;
+  
 }
+.blog .blog-items {
+  display: grid;
+  /* gap: 20px; */
+  /* padding-bottom: 30px; */
+  position: relative;
+  row-gap: 30px;
+}
+.blog .blog-box .title {
+  width: 90%;
+}
+
+.blog .blog-box {
+  padding: 0 10px 15px 0;
+  position: relative;
+  cursor: pointer;
+}
+.blog .blog-box::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, #343539, #dba423);
+}
+.blog .blog-box:nth-child(even):after {
+  background: linear-gradient(to right, #dba423, #343539);
+}
+.blog .blog-box:last-child:after {
+  background: none;
+}
+.blog-box .blog-img {
+  position: relative;
+  background-color: red;
+}
+.blog-box .blog-img {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.blog-box .blog-img img {
+  transition: 0.5s ease;
+  display: block;
+}
+.blog-box .blog-img:hover img {
+  transform: scale(1.1)
+}
+.blog-box .blog-img-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #343539ab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+}
+.blog-box .blog-img:hover .blog-img-overlay {
+  opacity: 1;
+  visibility: visible;
+
+}
+
+.blog-box .blog-img-overlay i {
+  font-size: 28px;
+  color: var(--f-color);
+}
+.blog-box .blog-text {
+  padding-top: 20px;
+}
+.blog-box .blog-text .blog-date {
+  color: var(--var-color);
+  font-size: var(--normal-font-size);
+}
+.blog-box .blog-text .blog-title{
+  margin: 10px 0;
+  font-size: var(--normal-font-size);
+  font-weight: 400;
+  color: var(--f-color);
+}
+.blog-box .blog-text .blog-par{
+  color: var(--c-color);
+  font-weight: 300;
+  font-size: var(--normal-font-size);
+}
+
+
+
+
+
+
+
+@media (min-width: 567px) {
+  .blog .title {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .blog .blog-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .blog .blog-items::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, #343539, #dba423, #343539);
+  }
+  .blog .blog-box {
+    padding: 0 20px 15px 0;
+  }
+  .blog .blog-box:nth-child(even) {
+    padding: 0 20px 15px 15px;
+  }
+  .blog-box .blog-img-overlay i {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  .blog .title {
+    width: 40%;
+    margin-left: 5%;
+  }
+  .blog .blog-items {
+    width: 90%;
+  }
+  .blog-box .blog-text .blog-title{
+    font-weight: 600;
+    /* font-size: var(--h3-font-size); */
+  }
+  .blog .blog-box:nth-last-child(-n + 2)::after {
+    background: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .blog .title {
+    width: 35%;
+    margin-left: 0;
+  }
+  .blog .blog-items {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .contact {
   font-size: 60px;
   background-color: rgb(255, 0, 0);
