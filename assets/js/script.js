@@ -208,7 +208,7 @@ function testFlexChange() {
 
 // testFlexChange()
 
-setInterval(testFlexChange, 7000);
+setInterval(testFlexChange, 10000);
 
 // Recent Works
 

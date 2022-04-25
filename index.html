@@ -35,6 +35,8 @@
     <link rel="stylesheet" href="assets/css/normalize.css" />
     <!-- Main CSS file -->
     <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Maps -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
   </head>
   <body>
     <div class="content">
@@ -409,7 +411,7 @@
                         <img src="assets/imgs/per1.png" alt="Person image" />
                       </div>
                       <div class="person-text">
-                        <h5 class="person-name">Ahmad Elsayed</h5>
+                        <h5 class="person-name">Ahmad Elsayed 1</h5>
                         <p class="person-jop">Web Developer</p>
                       </div>
                     </div>
@@ -425,7 +427,7 @@
                         <img src="assets/imgs/per2.png" alt="Person image" />
                       </div>
                       <div class="person-text">
-                        <h5 class="person-name">Ahmad Elsayed</h5>
+                        <h5 class="person-name">Ahmad Elsayed 2</h5>
                         <p class="person-jop">Web Developer</p>
                       </div>
                     </div>
@@ -441,7 +443,23 @@
                         <img src="assets/imgs/per3.png" alt="Person image" />
                       </div>
                       <div class="person-text">
-                        <h5 class="person-name">Ahmad Elsayed</h5>
+                        <h5 class="person-name">Ahmad Elsayed 3</h5>
+                        <p class="person-jop">Web Developer</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="test-box">
+                    <p class="test-par">
+                      "My motivation is customer satisfaction. Trust me and
+                      trust your growth asset management to my expertise gained
+                      over the years. My goal is continuous achievement.!"
+                    </p>
+                    <div class="test-person">
+                      <div class="per-img">
+                        <img src="assets/imgs/per4.png" alt="Person image" />
+                      </div>
+                      <div class="person-text">
+                        <h5 class="person-name">Ahmad Elsayed 4</h5>
                         <p class="person-jop">Web Developer</p>
                       </div>
                     </div>
@@ -449,6 +467,7 @@
                 </div>
                 <div class="bullet">
                   <span class="item-bullet active-bullet"></span>
+                  <span class="item-bullet"></span>
                   <span class="item-bullet"></span>
                   <span class="item-bullet"></span>
                 </div>
@@ -826,15 +845,72 @@
               </div>
             </section>
             <section class="section contact">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-              possimus aliquam, sed debitis quia in a neque, quod ullam esse,
-              facere optio nihil laboriosam non deserunt. Reiciendis blanditiis
-              quia vel dolorum perferendis dolor id ullam repudiandae minus,
-              commodi, modi consequatur neque animi tenetur dolores doloribus
-              unde, nesciunt expedita. Nisi inventore velit eum quae, harum
-              distinctio incidunt iusto nesciunt perferendis quidem. Lorem ipsum
-              dolor sit amet consectetur adipisicing elit. Delectus possimus
-              aliquam, sed debitis quia in a neque, quod ullam esse, facere
+              <h2 class="title">Get in Touch</h2>
+              <div class="contact-boxs">
+                <div class="map-box">
+                  <div id="map"></div>
+                </div>
+                <div class="info-content">
+                  <div class="info-email">
+                    <div class="info-box">
+                      <i class="bi bi-envelope-open"></i>
+                      <div class="info-text">
+                        <h5 class="info-head">Mail Me</h5>
+                        <span class="info-span">email@example.com </span>
+                      </div>
+                    </div>
+                    <div class="info-box">
+                      <i class="bi bi-envelope-open"></i>
+                      <div class="info-text">
+                        <h5 class="info-head">Mail Me</h5>
+                        <span class="info-span">email@example.com </span>
+                      </div>
+                    </div>
+                    <div class="info-box">
+                      <i class="bi bi-envelope-open"></i>
+                      <div class="info-text">
+                        <h5 class="info-head">Mail Me</h5>
+                        <span class="info-span">email@example.com </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="info-form">
+                    <form action="" class="form">
+                      <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="Complate Name"
+                      />
+                      <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="Email Address"
+                      />
+                      <input
+                        type="text"
+                        name="number"
+                        id="number"
+                        placeholder="Phone number"
+                      />
+                      <textarea
+                        name="message"
+                        id="message"
+                        cols="30"
+                        rows="7"
+                        placeholder="Your message"
+                      ></textarea>
+                      <input
+                        type="submit"
+                        value="Send Message"
+                        class="submit"
+                      />
+                    </form>
+                  </div>
+                </div>
+              </div>
             </section>
           </div>
         </main>
@@ -890,5 +966,11 @@
     </script> -->
     <!-- Main Js file -->
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/map.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      defer
+      async
+    ></script>
   </body>
 </html>
