@@ -1,5 +1,15 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
 
+@font-face {
+  font-family: "Pacifico";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Pacifico Regular"), local("Pacifico-Regular"),
+    url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2)
+      format("woff2");
+  font-display: swap;
+}
+
 /* -- Variables CSS -- */
 :root {
   /* -- Colors -- */
@@ -481,10 +491,10 @@ button {
 .main .main-content {
   position: relative;
   height: 100%;
-  transition: 0.5s ease;
+  transition: 0.6s ease;
 }
 .content .main .section {
-  transition: 0.6s ease;
+  transition: 0.7s linear;
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
@@ -739,6 +749,7 @@ button {
     width: 35px;
     height: 35px;
     border: none;
+    margin: 3px 0;
     border-radius: 10px;
     background-color: var(--t-color);
   }
@@ -1116,7 +1127,7 @@ button {
   height: 5px;
   border-radius: 10px;
   background-color: var(--var-color);
-  transition: 2s linear;
+  transition: 2.5s linear;
 }
 .skills-design .skill-show .skill-per {
   position: absolute;
@@ -1754,8 +1765,13 @@ button {
   background-color: #dba423;
   border-radius: 10px;
   overflow: hidden;
-  height: 300px;
-  margin-bottom: 60px;
+  height: 350px;
+  margin-bottom: 50px;
+  margin-top: 45px;
+  border: 2px solid var(--var-color);
+}
+.contact .map-box iframe {
+  border-radius: 10px;
 }
 /* Set the size of the div element that contains the map */
 #map {
@@ -1783,16 +1799,16 @@ button {
   color: var(--var-color);
 }
 .contact .info-box .info-text {
-  margin-left: 18px;
+  margin-left: 20px;
 }
 .contact .info-box .info-head {
   font-size: var(--h3-font-size);
   color: var(--f-color);
-  font-weight: normal;
+  font-weight: 300;
 }
 .contact .info-box .info-span {
   display: block;
-  font-size: var(--normal-font-size);
+  font-size: var(--small-font-size);
   color: var(--c-color);
   margin-top: -3px;
 }

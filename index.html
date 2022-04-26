@@ -35,8 +35,14 @@
     <link rel="stylesheet" href="assets/css/normalize.css" />
     <!-- Main CSS file -->
     <link rel="stylesheet" href="assets/css/style.css" />
+    <!--Add a script by google -->
+    <!-- <script
+      src="https://maps.googleapis.com/maps/api/js?key=<YOUR_API_KEY>&callback=initMap&libraries=&v=weekly"
+      async
+    ></script> -->
     <!-- Maps -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> -->
   </head>
   <body>
     <div class="content">
@@ -848,7 +854,16 @@
               <h2 class="title">Get in Touch</h2>
               <div class="contact-boxs">
                 <div class="map-box">
-                  <div id="map"></div>
+                  <!-- <div id="map"></div> -->
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13760.681254716073!2d31.045001307755822!3d30.431273509320093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14587983dbcc1fbd%3A0x4b3aee20a2067b8a!2z2KfZhNio2KfYrNmI2LHYjCDZhdiv2YrZhtipINin2YTYqNin2KzZiNix2Iwg2KfZhNio2KfYrNmI2LHYjCDYp9mE2YXZhtmI2YHZitip!5e0!3m2!1sar!2seg!4v1650982082894!5m2!1sar!2seg"
+                    width="100%"
+                    height="100%"
+                    style="border: 0"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
                 </div>
                 <div class="info-content">
                   <div class="info-email">
@@ -860,17 +875,19 @@
                       </div>
                     </div>
                     <div class="info-box">
-                      <i class="bi bi-envelope-open"></i>
+                      <i class="bi bi-telephone"></i>
                       <div class="info-text">
-                        <h5 class="info-head">Mail Me</h5>
-                        <span class="info-span">email@example.com </span>
+                        <h5 class="info-head">Call Us On</h5>
+                        <span class="info-span">+123 456 7890 </span>
                       </div>
                     </div>
                     <div class="info-box">
-                      <i class="bi bi-envelope-open"></i>
+                      <i class="bi bi-map"></i>
                       <div class="info-text">
-                        <h5 class="info-head">Mail Me</h5>
-                        <span class="info-span">email@example.com </span>
+                        <h5 class="info-head">Visit office</h5>
+                        <span class="info-span"
+                          >24 Street, New York, United State.
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -966,11 +983,13 @@
     </script> -->
     <!-- Main Js file -->
     <script src="assets/js/script.js"></script>
-    <script src="assets/js/map.js"></script>
-    <script
+    <!-- Map js for api -->
+    <!-- <script src="assets/js/map.js"></script> -->
+    <!-- <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
       defer
       async
-    ></script>
+    ></script> -->
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script> -->
   </body>
 </html>

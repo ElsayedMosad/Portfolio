@@ -167,11 +167,12 @@ let doWidth = false;
 about.addEventListener("scroll", () => {
   if (about.scrollTop + about.offsetTop + 200 > aboutDesign.offsetTop) {
     if (!doWidth) {
+      // take span width from data width
       spanSkills.forEach((span) => {
         span.style.width = span.dataset.width;
       });
       spanPerSkill.forEach((per) => {
-        counterIcon(per, per.dataset.width, 2000 / per.dataset.width);
+        counterIcon(per, per.dataset.width, 2500 / per.dataset.width);
         // per.style.width = per.dataset.width;
       });
       doWidth = true;
