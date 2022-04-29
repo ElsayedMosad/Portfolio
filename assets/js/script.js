@@ -28,6 +28,10 @@ function classPlayLeft(index) {
   }
 }
 
+// Music buttons
+const audioOne = new Audio("assets/music/m1.mp3");
+const audioTwo = new Audio("assets/music/m5.mp3");
+
 const leftSide = document.querySelector(".left-side");
 const navLinks = document.querySelectorAll(".nav .nav-link");
 
@@ -120,6 +124,7 @@ moveButs.forEach((but) => {
       showCurrentSec(currentIndex);
       removeClass(navLinks, "active-link", currentIndex);
       classPlayLeft(currentIndex);
+      audioOne.play();
     } else if (but.classList.contains("move-down")) {
       currentIndex--;
       if (currentIndex === -1) {
@@ -129,6 +134,7 @@ moveButs.forEach((but) => {
       removeClass(navLinks, "active-link");
       removeClass(navLinks, "active-link", currentIndex);
       classPlayLeft(currentIndex);
+      audioTwo.play();
     }
   });
 });
@@ -266,3 +272,7 @@ function currentItems(elements, currentData) {
 //     prevEl: ".swiper-button-prev",
 //   },
 // });
+
+// document.onclick = function() {
+// console.log('mu')
+// }
