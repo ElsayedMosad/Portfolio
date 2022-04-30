@@ -143,7 +143,6 @@ const about = document.querySelector(".about");
 const aboutMe = document.querySelector(".about-me");
 const aboutIcons = document.querySelector(".about-icons");
 const aboutIconNum = document.querySelectorAll(".icon-num");
-// console.log(aboutIconNum);
 
 let start = false;
 about.addEventListener("scroll", () => {
@@ -187,38 +186,42 @@ about.addEventListener("scroll", () => {
 });
 
 // About Testimonial
+// const testimonialFlex = document.querySelector(".test-flex");
+// const testimonialBullets = document.querySelectorAll(".item-bullet");
+// const testBoxs = document.querySelectorAll(".test-box");
+// let m = 0;
+// let t = 0;
 
-const testimonialFlex = document.querySelector(".test-flex");
-const testimonialBullets = document.querySelectorAll(".item-bullet");
-const testBoxs = document.querySelectorAll(".test-box");
+// testimonialBullets.forEach((bullet, index) => {
+//   bullet.addEventListener("click", () => {
+//     removeClass(testimonialBullets, "active-bullet", index);
+//     testimonialFlex.style.cssText = `transform: translateX(-${100 * index}%);`;
+//     m = index;
+//     t = index;
+//     // removeClass(testBoxs, "current-box", m);
+//     testimonialFlex.style.transition = '0.8s';
+//   });
+// });
+// function testFlexChange() {
+//   m++;
+//   t++;
+//   if (m === testBoxs.length) {
+//     m = 0;
+//     testimonialFlex.style.transition = `none`;
+//   }
+//   else {
+//     testimonialFlex.style.transition = '0.8s';
+//   }
+//   testimonialFlex.style.transform = `translateX(-${100 * m}%)`;
+//   if (t === testimonialBullets.length || m === 0) {
+//     t = 0
+//   }
+//   removeClass(testBoxs, "current-box", m);
+//   removeClass(testimonialBullets, "active-bullet", t);
+// }
+// setInterval(testFlexChange, 5000);
 
-let m = 0;
-
-testimonialBullets.forEach((bullet, index) => {
-  bullet.addEventListener("click", () => {
-    removeClass(testimonialBullets, "active-bullet", index);
-    testimonialFlex.style.cssText = `transform: translateX(-${100 * index}%);`;
-    m = index;
-    removeClass(testBoxs, "current-box", m);
-  });
-});
-
-function testFlexChange() {
-  m++;
-  if (m === testimonialBullets.length) {
-    m = 0;
-  }
-  testimonialFlex.style.cssText = `transform: translateX(-${100 * m}%);`;
-  removeClass(testimonialBullets, "active-bullet", m);
-  removeClass(testBoxs, "current-box", m);
-}
-
-// testFlexChange()
-
-setInterval(testFlexChange, 10000);
-
-// Recent Works
-
+// Recent Works Button in home section
 const recentWorks = document.querySelector(".home-works");
 
 recentWorks.onclick = function () {
@@ -229,11 +232,6 @@ recentWorks.onclick = function () {
     classPlayLeft(3);
   }
 };
-
-// window.addEventListener('DOMContentLoaded', (event) => {
-//   console.log('DOM fully loaded and parsed');
-// });
-
 // Works search
 const worksButs = document.querySelectorAll(".work-but");
 const projectBox = document.querySelectorAll(".project-box");
@@ -244,7 +242,6 @@ worksButs.forEach((e, index) => {
     removeClass(worksButs, "active-but", index);
   });
 });
-
 function currentItems(elements, currentData) {
   elements.forEach((e) => {
     if (e.dataset.pro == currentData && currentData !== "all") {
@@ -258,21 +255,84 @@ function currentItems(elements, currentData) {
   });
 }
 
-// Swiper
-// var swiper = new Swiper(".mySwiper", {
-//   slidesPerView: 1,
-//   spaceBetween: 30,
-//   loop: true,
-//   pagination: {
-//     el: ".swiper-pagination",
-//     clickable: true,
-//   },
-//   navigation: {
-//     nextEl: ".swiper-button-next",
-//     prevEl: ".swiper-button-prev",
-//   },
+// testimonialBullets.forEach((bullet, index) => {
+//   bullet.addEventListener("click", () => {
+//     removeClass(testimonialBullets, "active-bullet", index);
+//     testimonialFlex.style.cssText = `transform: translateX(-${100 * index}%);`;
+//     m = index;
+//     removeClass(testBoxs, "current-box", m);
+//   });
 // });
 
-// document.onclick = function() {
-// console.log('mu')
+// function testFlexChange() {
+//   m++;
+//   if (m === testimonialBullets.length) {
+//     m = 0;
+//   }
+//   testimonialFlex.style.cssText = `transform: translateX(-${100 * m}%);`;
+//   removeClass(testimonialBullets, "active-bullet", m);
+//   removeClass(testBoxs, "current-box", m);
 // }
+// setInterval(testFlexChange, 5000);
+
+//  slider
+const slides = document.getElementsByClassName("test-box"); // this selection is a live collection; any changes in DOM is updated in the variable unlike querySelectors
+const testimonialBullets = document.querySelectorAll(".item-bullet");
+const btnLeft = document.querySelector(`.btn-left`);
+const btnRight = document.querySelector(`.btn-right`);
+
+let currentSlideIndex = 0;
+let lastSlideIndex = slides.length - 1;
+
+// go to a slide;
+function goToSlide(slideIndex) {
+  [...slides].forEach((s, i) => {
+    s.style.transform = `translateX(${100 * (i - slideIndex)}%)`;
+  });
+  currentSlideIndex = slideIndex;
+}
+goToSlide(currentSlideIndex);
+
+// make ready the next slide if current slide is the first or the last slide
+function readyNextSlide() {
+  // if currentSlide is the last slide, shift the first slide to the end
+  if (currentSlideIndex === lastSlideIndex) {
+    slides[lastSlideIndex].insertAdjacentElement("afterend", slides[0]);
+    slides[lastSlideIndex].style.transform = `translateX(${100}%)`;
+    currentSlideIndex--; //this is because current slide is now the second last slide
+  }
+  // if currentSlide is the first slide, shift the last slide to the beginning
+  if (currentSlideIndex === 0) {
+    slides[0].insertAdjacentElement("beforebegin", slides[lastSlideIndex]);
+    slides[0].style.transform = `translateX(-${100}%)`;
+    currentSlideIndex++; //this is because current slide is now the second slide
+  }
+}
+
+// put the last slide in the beginning; ('if' condition is not necessary but providing if condition is future proof if user sets the initial slide to be shown as the last slide )
+if (currentSlideIndex === lastSlideIndex || currentSlideIndex === 0)
+  readyNextSlide();
+
+let bulletIndex = 0;
+// shift all slides left or right based on direction provided
+function shiftSlides(direction) {
+  direction ? currentSlideIndex++ : currentSlideIndex--;
+  if (currentSlideIndex === lastSlideIndex || currentSlideIndex === 0)
+    readyNextSlide();
+  goToSlide(currentSlideIndex);
+  // Add for bullets active
+  bulletIndex++;
+  if (bulletIndex === testimonialBullets.length) {
+    bulletIndex = 0;
+  }
+  removeClass(testimonialBullets, "active-bullet", bulletIndex);
+}
+
+// //button click events
+// btnRight.addEventListener("click", shiftSlides.bind(null, 1));
+// btnLeft.addEventListener("click", shiftSlides.bind(null, 0));
+
+setInterval(shiftSlides.bind(null, 1), 5000);
+
+// about.scrollTop = about.scrollHeight;
+// showCurrentSec(1);
