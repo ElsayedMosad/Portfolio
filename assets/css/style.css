@@ -1,5 +1,4 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
-
 @font-face {
   font-family: "Pacifico";
   font-style: normal;
@@ -22,6 +21,7 @@
 
   /* -- WeightFonts */
   --head-weight: 500;
+  --big-weight: 600;
 
   /* -- Line Height */
   --line-h: 1.6;
@@ -29,7 +29,7 @@
   /* Border Radius */
   --small-bor-rad: 10px;
   --normal-bor-rad: 20px;
-  --big-bor-rad: 30px;
+  --big-bor-rad: 25px;
 
   /* Font Size */
   font-size: 16px;
@@ -158,24 +158,40 @@ button {
   border-radius: 5px;
   background: linear-gradient(to right, #dba423, #343539);
 }
-/* @media (min-width: 992px) {
-  .title {
-    font-size: var(--h1-font-size);
-    font-weight: 300
+@media (min-width: 576px) {
+  .title.title-med {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
   }
-} */
+}
+@media (min-width: 768px) {
+  .title.title-med {
+    width: 40%;
+    margin-left: 5%;
+  }
+}
+@media (min-width: 992px) {
+  .title.title-med {
+    width: 35%;
+    margin-left: 0;
+  }
+}
 .but {
-  padding: 15px 25px;
-  background-color: var(--var-color);
+  width: 170px;
+  height: 48px;
+  background-color: #564b35;
   font-size: var(--normal-font-size);
-  color: var(--f-color);
   border-radius: var(--normal-bor-rad);
+  color: var(--f-color);
+  font-weight: 300;
+  border: 2px solid var(--var-color);
+  /* max-width: 100%; */
 }
 /* -- Content -- */
 .content {
   width: 100%;
-  /* Review */
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -206,7 +222,6 @@ button {
   cursor: pointer;
   z-index: 20;
 }
-
 .content .toggle-side span {
   display: block;
   width: 25px;
@@ -266,8 +281,14 @@ button {
 .content .left-side .my-info .my-img {
   width: 190px;
   height: 190px;
+  max-width: 100%;
   border-radius: 50%;
   overflow: hidden;
+}
+.content .left-side .my-info .my-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 .content .left-side .my-info .my-name {
   color: var(--f-color);
@@ -277,16 +298,13 @@ button {
 }
 .content .left-side .my-info .my-cv {
   margin-top: 25px;
-  width: 170px;
-  height: 48px;
-  padding: 0;
-  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   visibility: visible;
   overflow: hidden;
   opacity: 1;
-  transition: 0.8s ease;
-  background-color: #564b35;
-  border: 2px solid var(--var-color);
+  transition: 0.8s;
 }
 .content .left-side .my-info .my-cv:hover {
   background-color: var(--var-color);
@@ -449,7 +467,7 @@ button {
   }
   .content .left-side .nav .nav-link.active-link .item-name,
   .content .left-side .nav .nav-link:hover .item-name {
-    font-weight: 600;
+    font-weight: 400;
   }
 }
 /* Small For menu */
@@ -499,6 +517,10 @@ button {
   overflow-y: auto;
   overflow-x: hidden;
   padding: 15px;
+  /* position: absolute; */
+  /* width: 100%; */
+  /* top: 0; */
+  /* left: 0; */
 }
 .show-sec {
   visibility: hidden;
@@ -576,8 +598,8 @@ button {
   width: 80px;
   height: 80vh;
   background-color: var(--con-color);
-  position: relative;
   border-radius: var(--normal-bor-rad);
+  position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -633,7 +655,7 @@ button {
     height: 80px;
     width: 100%;
     transform: translateX(100vw);
-    transition: 0.3s ease;
+    transition: 0.3s;
     flex-direction: row;
     justify-content: space-evenly;
     border-top-left-radius: 0;
@@ -776,8 +798,6 @@ button {
   border-radius: 50%;
   max-width: 100%;
   margin: 10px 0 0;
-  /* width: 100%; */
-  /* height: 100%; */
 }
 .home .home-text {
   margin-top: 30px;
@@ -795,6 +815,10 @@ button {
   font-weight: var(--head-weight);
   max-width: 280px;
 }
+.home .home-hello .home-my-name {
+  color: var(--var-color);
+  /* font-weight: var(--big-weight); */
+}
 .home .home-link {
   color: var(--c-color);
   display: inline-block;
@@ -804,17 +828,8 @@ button {
 }
 .home .home-works {
   font-size: 16px;
-  color: var(--f-color);
-  border-radius: var(--normal-bor-rad);
-  transition: 0.3s ease;
-  width: 170px;
-  height: 48px;
-  padding: 14px 0;
-  font-weight: 300;
-  border: 2px solid var(--var-color);
-  max-width: 100%;
   margin-top: 25px;
-  background-color: #564b35;
+  transition: 0.3s ease;
 }
 .home .home-works:hover {
   background-color: var(--var-color);
@@ -842,6 +857,10 @@ button {
   }
   .main .home .home-text {
     margin-top: 0;
+  }
+  .home .home-hello {
+    /* font-size: var(--h1-font-size); */
+    font-weight: var(--big-weight);
   }
   .main .home .home-social {
     display: none;
@@ -1110,8 +1129,8 @@ button {
   /* margin: 10px 0 0; */
   color: var(--f-color);
   font-weight: normal;
-  text-transform: capitalize;
-  text-transform: uppercase;
+  /* text-transform: capitalize; */
+  /* text-transform: uppercase; */
 }
 .skills-design .skill-show {
   width: 100%;
@@ -1346,7 +1365,7 @@ button {
   padding-bottom: 20px;
 }
 
-@media (min-width: 567px) {
+@media (min-width: 576px) {
   .resume .resume-box {
     width: 80%;
     margin: auto;
