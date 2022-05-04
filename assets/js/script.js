@@ -1,3 +1,11 @@
+const loader = document.getElementById("loader");
+window.addEventListener("load", function () {
+  // console.log('load')
+  // console.log(loader)
+  loader.style.display = "none";
+  // console.log('load')
+  // console.timeEnd
+});
 // Genral functions
 function removeClass(ArrayOfElements, classTargetToRemove, newIndexForClass) {
   ArrayOfElements.forEach((element, index) => {
@@ -298,3 +306,21 @@ let conutShift = setInterval(shiftSlides.bind(null, 1), 3000);
 // });
 // about.scrollTop = about.scrollHeight;
 // showCurrentSec(1);
+
+const cursorOne = document.querySelector(".cursor-1");
+const cursorTwo = document.querySelector(".cursor-2");
+document.addEventListener("mousemove", function (e) {
+  cursorOne.style.cssText = `top: ${e.clientY}px;left: ${e.clientX}px`;
+  cursorTwo.style.cssText = `top: ${e.clientY}px;left: ${e.clientX}px`;
+  if (
+    e.target.tagName.toLowerCase() === "a" ||
+    e.target.parentElement.tagName.toLowerCase() === "a" ||
+    e.target.tagName.toLowerCase() === "button" ||
+    e.target.parentElement.tagName.toLowerCase() === "button"
+  ) {
+    cursorOne.classList.add("active-cursor")
+  } else {
+    cursorOne.classList.remove("active-cursor")
+    
+  }
+});
