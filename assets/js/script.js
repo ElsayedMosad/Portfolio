@@ -318,9 +318,8 @@ document.addEventListener("mousemove", function (e) {
     e.target.tagName.toLowerCase() === "button" ||
     e.target.parentElement.tagName.toLowerCase() === "button"
   ) {
-    cursorOne.classList.add("active-cursor")
+    cursorOne.classList.add("active-cursor");
   } else {
-    cursorOne.classList.remove("active-cursor")
-    
+    cursorOne.classList.remove("active-cursor");
   }
 });

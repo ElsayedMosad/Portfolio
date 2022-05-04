@@ -260,7 +260,7 @@ button {
 .content .toggle-side.toggle-open span:nth-child(3) {
   transform: translate(-50%, -50%) rotate(-45deg);
 }
-@media (min-width: 992px) {
+@media (min-width: 992.1px) {
   .content .container .toggle-side {
     display: none;
   }
@@ -1975,4 +1975,9 @@ button {
 }
 .cursor-1.active-cursor + .cursor-2{
   opacity: 0;
+}
+@media (max-width: 992px) {
+  .cursor {
+    display: none;
+  }
 }
