@@ -522,7 +522,7 @@ button {
   transition: 0.6s ease;
 }
 .content .main .section {
-  transition: 0.7s linear;
+  transition: 0.6s linear;
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
@@ -575,7 +575,7 @@ button {
   .content .left-side .nav .nav-item,
   .content .left-side .nav-menu,
   .content .main {
-    transition: 0.8s ease;
+    transition: 0.9s ease;
   }
   .content .main {
     width: calc(100% - 405px);
@@ -989,7 +989,7 @@ button {
 .about .about-me .hire-me {
   display: block;
   margin: 25px 0 20px;
-  width: 140px;
+  width: 135px;
   padding: 15px 0;
   text-align: center;
   background-color: var(--var-color);
@@ -1956,16 +1956,36 @@ button {
   pointer-events: none;
   z-index: 200;
 }
-.cursor-1 {
+/* .cursor-2,
+.cursor-3,
+.cursor-4 */
+.cursor-1
+{
   width: 30px;
   height: 30px;
   border: 1px solid var(--var-color);
-  transition: 0.1s ease-in-out;
+  transition: 0.08s ease-in-out;
 }
+/* .cursor-2
+{
+  transition: 0.1s ease-in-out;
+  opacity: 0.8;
+}
+.cursor-3
+{
+  transition: 0.12s ease-in-out;
+  opacity: 0.7;
+}
+.cursor-4
+{
+  transition: 0.14s ease-in-out;
+  opacity: 0.6;
+} */
 .cursor-2 {
-  width: 5px;
+  width: 6px;
   height: 5px;
   background-color: var(--var-color);
+  /* transition: 0.3s ease-in-out; */
 }
 .cursor-1.active-cursor {
   width: 80px;
@@ -1973,7 +1993,11 @@ button {
   background-color: var(--var-color);
   opacity: 0.3;
 }
-.cursor-1.active-cursor + .cursor-2{
+.cursor-1.active-cursor ~ .cursor-5,
+.cursor-1.active-cursor ~ .cursor-4,
+.cursor-1.active-cursor ~ .cursor-3,
+.cursor-1.active-cursor ~ .cursor-2
+{
   opacity: 0;
 }
 @media (max-width: 992px) {

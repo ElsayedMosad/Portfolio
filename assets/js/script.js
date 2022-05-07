@@ -190,6 +190,18 @@ about.addEventListener("scroll", () => {
 });
 
 // Recent Works Button in home section
+const hireMe = document.querySelector(".hire-me");
+
+hireMe.onclick = function () {
+  currentIndex = 5;
+  showCurrentSec(currentIndex);
+  removeClass(navLinks, "active-link", currentIndex);
+  if (funWorkOnLargeM()) {
+    classPlayLeft(5);
+  }
+};
+
+// Recent Works Button in home section
 const recentWorks = document.querySelector(".home-works");
 
 recentWorks.onclick = function () {
@@ -309,17 +321,21 @@ let conutShift = setInterval(shiftSlides.bind(null, 1), 3000);
 
 const cursorOne = document.querySelector(".cursor-1");
 const cursorTwo = document.querySelector(".cursor-2");
+
 document.addEventListener("mousemove", function (e) {
-  cursorOne.style.cssText = `top: ${e.clientY}px;left: ${e.clientX}px`;
-  cursorTwo.style.cssText = `top: ${e.clientY}px;left: ${e.clientX}px`;
-  if (
-    e.target.tagName.toLowerCase() === "a" ||
-    e.target.parentElement.tagName.toLowerCase() === "a" ||
-    e.target.tagName.toLowerCase() === "button" ||
-    e.target.parentElement.tagName.toLowerCase() === "button"
-  ) {
-    cursorOne.classList.add("active-cursor");
-  } else {
-    cursorOne.classList.remove("active-cursor");
+  if (funWorkOnLargeM()) {
+    cursorOne.style.cssText = `top: ${e.clientY}px;left: ${e.clientX}px`;
+    cursorTwo.style.cssText = `top: ${e.clientY}px;left: ${e.clientX}px`;
+    if (
+      e.target.tagName.toLowerCase() === "a" ||
+      e.target.parentElement.tagName.toLowerCase() === "a" ||
+      e.target.tagName.toLowerCase() === "button" ||
+      e.target.parentElement.tagName.toLowerCase() === "button"
+    ) {
+      cursorOne.classList.add("active-cursor");
+    } else {
+      cursorOne.classList.remove("active-cursor");
+    }
+
   }
 });
