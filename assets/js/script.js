@@ -1,10 +1,6 @@
 const loader = document.getElementById("loader");
 window.addEventListener("load", function () {
-  // console.log('load')
-  // console.log(loader)
   loader.style.display = "none";
-  // console.log('load')
-  // console.timeEnd
 });
 // Genral functions
 function removeClass(ArrayOfElements, classTargetToRemove, newIndexForClass) {
@@ -235,90 +231,6 @@ function currentItems(elements, currentData) {
   });
 }
 
-//  slider
-const slides = document.getElementsByClassName("test-box"); // this selection is a live collection; any changes in DOM is updated in the variable unlike querySelectors
-const testimonialBullets = document.querySelectorAll(".item-bullet");
-const btnLeft = document.querySelector(`.btn-left`);
-const btnRight = document.querySelector(`.btn-right`);
-
-let currentSlideIndex = 0;
-let lastSlideIndex = slides.length - 1;
-
-// go to a slide;
-function goToSlide(slideIndex) {
-  [...slides].forEach((s, i) => {
-    s.style.transform = `translateX(${100 * (i - slideIndex)}%)`;
-  });
-  currentSlideIndex = slideIndex;
-}
-goToSlide(currentSlideIndex);
-
-// make ready the next slide if current slide is the first or the last slide
-function readyNextSlide() {
-  // if currentSlide is the last slide, shift the first slide to the end
-  if (currentSlideIndex === lastSlideIndex) {
-    slides[lastSlideIndex].insertAdjacentElement("afterend", slides[0]);
-    slides[lastSlideIndex].style.transform = `translateX(${100}%)`;
-    currentSlideIndex--; //this is because current slide is now the second last slide
-  }
-  // if currentSlide is the first slide, shift the last slide to the beginning
-  if (currentSlideIndex === 0) {
-    slides[0].insertAdjacentElement("beforebegin", slides[lastSlideIndex]);
-    slides[0].style.transform = `translateX(-${100}%)`;
-    currentSlideIndex++; //this is because current slide is now the second slide
-  }
-}
-
-// put the last slide in the beginning; ('if' condition is not necessary but providing if condition is future proof if user sets the initial slide to be shown as the last slide )
-if (currentSlideIndex === lastSlideIndex || currentSlideIndex === 0)
-  readyNextSlide();
-
-let bulletIndex = 0;
-// shift all slides left or right based on direction provided
-function shiftSlides(direction) {
-  direction ? currentSlideIndex++ : currentSlideIndex--;
-  // console.log(currentSlideIndex)
-  if (currentSlideIndex === lastSlideIndex || currentSlideIndex === 0)
-    readyNextSlide();
-  goToSlide(currentSlideIndex);
-  // Add for bullets active
-  bulletIndex++;
-  if (bulletIndex === testimonialBullets.length) {
-    bulletIndex = 0;
-  }
-  removeClass(testimonialBullets, "active-bullet", bulletIndex);
-}
-
-// //button click events
-// btnRight.addEventListener("click", shiftSlides.bind(null, 1));
-// btnLeft.addEventListener("click", shiftSlides.bind(null, 0));
-let conutShift = setInterval(shiftSlides.bind(null, 1), 3000);
-
-// testimonialBullets.forEach((element, index) => {
-//   element.addEventListener("click", () => {
-// clearInterval(conutShift);
-// currentSlideIndex = index;
-// if (currentSlideIndex === lastSlideIndex || currentSlideIndex === 0)
-//   readyNextSlide();
-// goToSlide(currentSlideIndex);
-// console.log(index)
-// removeClass(testimonialBullets, "active-bullet", index);
-
-// console.log(currentSlideIndex)
-// setInterval(shiftSlides.bind(null, 1), 3000);
-// console.log(element)
-// console.log(index)
-// // currentSlideIndex = 3;
-// readyNextSlide();
-// goToSlide(index);
-// bulletIndex = index;
-// removeClass(testimonialBullets, "active-bullet", bulletIndex);
-// // shiftSlides.bind(null, 1)
-//   });
-// });
-// about.scrollTop = about.scrollHeight;
-// showCurrentSec(1);
-
 const cursorOne = document.querySelector(".cursor-1");
 const cursorTwo = document.querySelector(".cursor-2");
 
@@ -336,6 +248,7 @@ document.addEventListener("mousemove", function (e) {
     } else {
       cursorOne.classList.remove("active-cursor");
     }
-
   }
 });
+
+// //  slider
