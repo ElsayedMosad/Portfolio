@@ -252,3 +252,4 @@ document.addEventListener("mousemove", function (e) {
 });
 
 // //  slider
+

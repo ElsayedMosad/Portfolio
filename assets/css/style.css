@@ -388,7 +388,7 @@ button {
   opacity: 1;
   visibility: visible;
 }
-@media (min-width: 992px) {
+@media (min-width: 992.1px) {
   .content .left-side.play-left {
     width: 80px;
   }
@@ -567,7 +567,7 @@ button {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 992.1px) {
   .content .left-side,
   .content .left-side .my-info,
   .content .left-side .my-img,
@@ -1995,7 +1995,7 @@ button {
 {
   opacity: 0;
 }
-@media (max-width: 992px) {
+@media (max-width: 991.99px) {
   .cursor {
     display: none;
   }
