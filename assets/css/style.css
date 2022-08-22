@@ -1617,6 +1617,9 @@ button {
   position: relative;
   transition: 0.3s;
 }
+.works .items-projects .project-box .box-link:last-child {
+  display: none;
+}
 .works .items-projects a::after {
   content: "";
   position: absolute;
